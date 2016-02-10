@@ -72,9 +72,7 @@ class Hector_Align_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/hector-align-admin.css', array(), $this->version, 'all' );
-
 	}
 
 	/**
@@ -100,4 +98,30 @@ class Hector_Align_Admin {
 
 	}
 
+	/**
+	 * Add align custom post fields to images
+	 *
+	 * @since 1.0.0
+	 */
+		public function hector_align_metabox() {
+		  // Image alignement
+		  $alignment_prefix = '_hector_';
+
+		  $cmb_hector = new_cmb2_box( array(
+		    'id'            => $alignment_prefix . 'box',
+		    'title'         => __( 'Image alignement', 'cmb2' ),
+		    'object_types'  => array('attachment'),
+		  ));
+		  $cmb_hector->add_field(array(
+		    'name'    => 'Image Alignment',
+		    'id'      => $alignment_prefix . 'alignment',
+		    'desc'    => 'Select to which side align the image',
+		    'type'    => 'pw_select',
+		    'options' => array(
+		        'center'  => 'Center',
+		        'top'  => 'Top',
+		        'bottom' => 'Bottom',
+		    ),
+		  ));
+		}
 }

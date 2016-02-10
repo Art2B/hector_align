@@ -139,12 +139,11 @@ class Hector_Align {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Hector_Align_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'hector_align_metabox' );
 	}
 
 	/**
@@ -153,10 +152,8 @@ class Hector_Align {
 	 * @since    1.0.0
 	 */
 	public function run() {
-		error_log('salut c hector align');
-		// $this->loader->run();
+		$this->loader->run();
 	}
-
 	/**
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
