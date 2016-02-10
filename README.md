@@ -1,4 +1,5 @@
 # Hector Align
+
 *Contributors: Arthur Battut
 *Tags: images, align
 *Tested up to: Not tested yet
