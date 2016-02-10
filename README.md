@@ -1,8 +1,8 @@
 # Hector Align
-Contributors: Arthur Battut
-Tags: images, align
-Tested up to: Not tested yet
-Stable tag: 4.3
+*Contributors: Arthur Battut
+*Tags: images, align
+*Tested up to: Not tested yet
+*Stable tag: 4.3
 
 Hector Align allow your to add class to your featured images to align them on top, bottom, etc ...
 
