@@ -116,11 +116,12 @@ class Hector_Align_Admin {
 		    'name'    => 'Image Alignment',
 		    'id'      => $alignment_prefix . 'alignment',
 		    'desc'    => 'Select to which side align the image',
-		    'type'    => 'pw_select',
+		    'type'    => 'select',
+		    'default'	=> 'center',
 		    'options' => array(
 		        'center'  => 'Center',
-		        'top'  => 'Top',
-		        'bottom' => 'Bottom',
+		        'top'  		=> 'Top',
+		        'bottom' 	=> 'Bottom',
 		    ),
 		  ));
 		}
