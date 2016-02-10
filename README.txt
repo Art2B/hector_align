@@ -1,14 +1,13 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
-Tags: comments, spam
+=== Hector Align ===
+Contributors: Arthur Battut
+Tags: images, align
 Requires at least: 3.0.1
-Tested up to: 3.4
+Tested up to: Not tested yet
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Hector Align allow your to add class to your featured images to align them on top, bottom, etc ...
 
 == Description ==
 

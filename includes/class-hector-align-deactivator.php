@@ -3,11 +3,11 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://example.com
+ * @link       https://github.com/Art2B/hector_align
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    Hector_Align
+ * @subpackage Hector_Align/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    Hector_Align
+ * @subpackage Hector_Align/includes
+ * @author     Arthur Battut 
  */
-class Plugin_Name_Deactivator {
+class Hector_Align_Deactivator {
 
 	/**
 	 * Short Description. (use period)

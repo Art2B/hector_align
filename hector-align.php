@@ -32,30 +32,30 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/class-hector-align-activator.php
  */
-function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+function activate_hector_align() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-hector-align-activator.php';
+	Hector_Align_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/class-hector-align-deactivator.php
  */
-function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+function deactivate_hector_align() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-hector-align-deactivator.php';
+	Hector_Align_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_hector_align' );
+register_deactivation_hook( __FILE__, 'deactivate_hector_align' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-hector-align.php';
 
 /**
  * Begins execution of the plugin.
@@ -66,10 +66,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
-
-	$plugin = new Plugin_Name();
+function run_hector_align() {
+	$plugin = new Hector_Align();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_hector_align();

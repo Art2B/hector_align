@@ -1,13 +1,4 @@
 <?php
-/*
- * Plugin Name: Arthur Align Image
- * Description: Align posts featured images for crop
- * Author: Arthur Battut
- * Author URI: twitter.com/abattut
- * License: MIT
- * Network: true
- */
-
 $align_prefix = '_aai_';
 
 add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');

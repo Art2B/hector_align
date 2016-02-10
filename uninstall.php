@@ -19,10 +19,10 @@
  * For more information, see the following discussion:
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
- * @link       http://example.com
+ * @link       https://github.com/Art2B/hector_align
  * @since      1.0.0
  *
- * @package    Plugin_Name
+ * @package    Hector_Align
  */
 
 // If uninstall not called from WordPress, then exit.
