@@ -103,26 +103,57 @@ class Hector_Align_Admin {
 	 *
 	 * @since 1.0.0
 	 */
-		public function hector_align_metabox() {
-		  // Image alignement
-		  $alignment_prefix = '_hector_';
+	public function align_metabox() {
+	  // Image alignement
+	  $alignment_prefix = '_hector_';
 
-		  $cmb_hector = new_cmb2_box( array(
-		    'id'            => $alignment_prefix . 'box',
-		    'title'         => __( 'Image alignement', 'cmb2' ),
-		    'object_types'  => array('attachment'),
-		  ));
-		  $cmb_hector->add_field(array(
-		    'name'    => 'Image Alignment',
-		    'id'      => $alignment_prefix . 'alignment',
-		    'desc'    => 'Select to which side align the image',
-		    'type'    => 'select',
-		    'default'	=> 'center',
-		    'options' => array(
-		        'center'  => 'Center',
-		        'top'  		=> 'Top',
-		        'bottom' 	=> 'Bottom',
-		    ),
-		  ));
-		}
+	  $cmb_hector = new_cmb2_box( array(
+	    'id'            => $alignment_prefix . 'box',
+	    'title'         => __( 'Image alignement', 'cmb2' ),
+	    'object_types'  => array('attachment'),
+	  ));
+	  $cmb_hector->add_field(array(
+	    'name'    => 'Image Alignment',
+	    'id'      => $alignment_prefix . 'alignment',
+	    'desc'    => 'Select to which side align the image',
+	    'type'    => 'select',
+	    'default'	=> 'center',
+	    'options' => array(
+	        'center'  => 'Center',
+	        'top'  		=> 'Top',
+	        'bottom' 	=> 'Bottom',
+	    ),
+	  ));
+	}
+
+	/**
+	 * Add align custom post fields to images
+	 *
+	 * @since 1.0.0
+	 */
+	public function register_alignment_api() {
+	  $attachements = array('attachment');
+	  $this->register_field($attachements, 'hector_alignment');
+	}
+
+	/**
+	 * Helpers to get the content of specific meta and send them back to the api
+	 *
+	 * @since 1.0.0
+	 */
+
+	private function register_field($objects, $field){
+	  foreach ($objects as &$object) {
+	    register_api_field( $object, $field,
+	      array(
+	        'get_callback'    => 'slug_get_meta',
+	        'update_callback' => null,
+	        'schema'          => null,
+	      )
+	    );
+	  }
+	}
+	private function slug_get_meta( $object, $field_name, $request ) {
+	  return get_post_meta( $object[ 'id'] , '_'.$field_name, true );
+	}
 }

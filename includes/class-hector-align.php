@@ -143,7 +143,8 @@ class Hector_Align {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'hector_align_metabox' );
+		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'align_metabox' );
+		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_alignment_api' );
 	}
 
 	/**
